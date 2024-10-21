@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/colektia/build/static/css/main.e49131f8.css",
+    "main.js": "/colektia/build/static/js/main.5db64180.js",
+    "static/js/453.986a58bd.chunk.js": "/colektia/build/static/js/453.986a58bd.chunk.js",
+    "index.html": "/colektia/build/index.html",
+    "main.e49131f8.css.map": "/colektia/build/static/css/main.e49131f8.css.map",
+    "main.5db64180.js.map": "/colektia/build/static/js/main.5db64180.js.map",
+    "453.986a58bd.chunk.js.map": "/colektia/build/static/js/453.986a58bd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e49131f8.css",
+    "static/js/main.5db64180.js"
+  ]
+}
