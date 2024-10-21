@@ -18,6 +18,7 @@ export default function App() {
           <Route path="/Quit" element={<Quit />}/>
         </Routes>
       </BrowserRouter>
+      <h1>Hola mundo</h1>
     </div>
   );
 };
