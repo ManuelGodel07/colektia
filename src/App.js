@@ -4,6 +4,7 @@ import Quit from "./screens/Quit";
 import Home from "./screens/Home";
 import Recruitment from "./screens/Recruitment";
 import Training from "./screens/Training";
+import Reject from './screens/Reject';
 
 export default function App() {
 
@@ -14,6 +15,7 @@ export default function App() {
           <Route path='/home' element={<Home />}/>
           <Route path='/Recruitment' element={<Recruitment />}/>
           <Route path='/Training' element={<Training />}/>
+          <Route path='/Reject' element={<Reject />}/>
           <Route path="/Quit" element={<Quit />}/>
           <Route path='*' element={<Home />} />
           
