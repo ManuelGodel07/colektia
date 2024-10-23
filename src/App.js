@@ -16,9 +16,10 @@ export default function App() {
           <Route path='/Recruitment' element={<Recruitment />}/>
           <Route path='/Training' element={<Training />}/>
           <Route path="/Quit" element={<Quit />}/>
+          <Route path='*' element={<Home />} />
+          
         </Routes>
       </BrowserRouter>
-      <h1>Hola mundo</h1>
     </div>
   );
 };
