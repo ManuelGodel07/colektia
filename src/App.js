@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter,Route,Router,Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter,Route,Routes} from 'react-router-dom';
 import './App.css';
 import Quit from "./screens/Quit";
 import Home from "./screens/Home";

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
-import { getFirestore, collection, getDocs } from "firebase/firestore"; 
+import { collection, getDocs } from "firebase/firestore"; 
 import { db } from '../config/firestore';
 import Menu from './Menu';
 import { Bar } from 'react-chartjs-2';
