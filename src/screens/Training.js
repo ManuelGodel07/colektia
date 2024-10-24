@@ -136,5 +136,4 @@ return (
     </div>
 );
 }
-
 export default Training;
