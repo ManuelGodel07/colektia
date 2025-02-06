@@ -4,8 +4,8 @@ export const trainSet = [
         name: "1",
         options: [
             { choice: "a) Si", radioValue: "q1-a", selected: false },
-            { choice: "b) Mas o menos", radioValue: "q1-a", selected: false },
-            { choice: "c) No", radioValue: "q1-a", selected: false }
+            { choice: "b) Mas o menos", radioValue: "q1-b", selected: false },
+            { choice: "c) No", radioValue: "q1-c", selected: false }
         ]
     },
     {
@@ -33,25 +33,32 @@ export const trainSet = [
     ]
     },
     {
-        questionText: "¿Qué tan fácil te fue aplicar tus conocimientos y habilidades a la capacitación",
+        questionText: "¿Qué tan fácil te fue aplicar tus conocimientos y habilidades a la capacitación?",
         name: "5",
         options: [
-            { choice: "a) Buena", radioValue: "q5-a", selected: false },
+            { choice: "a) Muy facil", radioValue: "q5-a", selected: false },
             { choice: "b) Regular", radioValue: "q5-b", selected: false },
-            { choice: "c) Mala", radioValue: "q5-c", selected: false }]
+            { choice: "c) Muy dificil", radioValue: "q5-c", selected: false }]
     },
     {
         questionText: "¿Consideras que la duración de la capacitación fue adecuada para cubrir todos los temas?",
         name: "6",
         options: [
             { choice: "a) Si", radioValue: "q6-a", selected: false },
-            { choice: "a) No", radioValue: "q6-b", selected: false }]
+            { choice: "b) No", radioValue: "q6-b", selected: false }]
     },
     {
-        questionText: "¿Te sientes list para realizar tus tareas con éxito después de la capacitación?",
+        questionText: "¿Te sientes listo para realizar tus tareas con éxito después de la capacitación?",
         name: "7",
         options: [
             { choice: "a) Si", radioValue: "q7-a", selected: false },
             { choice: "b) No", radioValue: "q7-b", selected: false } ]
+    },
+    {
+        questionText: "¿Consideras que el proceso de onboarding te ayudó a entender la misión, visión y valores de la empresa?",
+        name: "8",
+        options: [
+            { choice: "a) Si", radioValue: "q8-a", selected: false },
+            { choice: "b) No", radioValue: "q8-b", selected: false } ]
     }
 ];

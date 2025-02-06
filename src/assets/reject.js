@@ -4,12 +4,12 @@ export const questionsSet = [
         name: "1",
         options: [
             { choice: "a) Todas", radioValue: "q1-a", selected: false },
-            { choice: "b) Algunas", radioValue: "q1-a", selected: false },
-            { choice: "c) Ninguna", radioValue: "q1-a", selected: false }
+            { choice: "b) Algunas", radioValue: "q1-b", selected: false },
+            { choice: "c) Ninguna", radioValue: "q1-c", selected: false }
         ]
     },
     {
-    questionText: "¿Consideras que la calidad de la capacitación que se te brindo fue suficiente para realizar tus tareas de manera efectiva?",
+    questionText: "¿Consideras que fue suficiente la calidad de la capacitación que se te brindo para realizar tus tareas de manera efectiva?",
     name: "2",
     options: [
         { choice: "a) Mucho", radioValue: "q2-a", selected: false },
@@ -45,7 +45,7 @@ export const questionsSet = [
         name: "6",
         options: [
             { choice: "a) Si", radioValue: "q6-a", selected: false },
-            { choice: "a) No", radioValue: "q6-b", selected: false }]
+            { choice: "b) No", radioValue: "q6-b", selected: false }]
     },
     {
         questionText: "¿Consideras que el feedback que recibiste durante tu periodo de prueba fue suficiente y claro para mejorar tu desempeño?",

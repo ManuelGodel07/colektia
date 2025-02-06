@@ -14,32 +14,3 @@
   align-items: center;
   color:var(--ck-light-text-color);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.Header-container {
-  text-align: center;
-}
-
-.Header-container  h1 {
-  margin-top: 0;
-}
-
-.Starting-test{
-  padding-top: 2vh;  
-}
-.Graphs{
-  width: 95%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.Recomendation-component{
-  margin: 5%;
-  width: 40%;
-  height: 30vh;
-}

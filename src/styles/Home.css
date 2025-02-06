@@ -1,3 +1,12 @@
+:root {
+    --ck-light-bg-color: #ff6464;
+    --ck-light-text-color: #fff;
+    --ck-dark-bg-color: #0f1f44
+}
+* {
+    box-sizing: border-box;
+}
+
 .Dashboard-container {
     margin: 2rem auto;
     padding: 1rem;
@@ -28,11 +37,139 @@
     outline: none;
 }
 
-@media (max-width: 768px) {
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.Header-container {
+    text-align: center;
+}
+
+.Header-container  h1 {
+    margin-top: 0;
+}
+
+.Starting-test{
+    padding-top: 2vh;  
+}
+.Graphs{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.container {
+    background-color: var(--ck-light-bg-color);
+    color: var(--ck-light-text-color);
+    font-size: 18px;
+}
+.Recomendation-component{
+    margin: 5%;
+    width: 40%;
+    height: 30vh;
+}
+.table-Comments{ 
+    width: '90%';
+    border-collapse: collapse;
+}
+.table-Header{ 
+    background-color: var(--ck-dark-bg-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: left;
+    padding: 12px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1em;
+}
+
+
+tbody tr:hover {
+    background-color: #e0f7fa;
+    color: #000;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+.center-Text{
+    text-align: center;
+}
+
+.hidden-text{
+    visibility: hidden;
+}
+/* ******************************************************************* */
+@media (max-width: 1200px) {
+    .container {
+    font-size: 18px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+    background-color: var(--ck-light-bg-color);
+    font-size: 16px;
+    }
+    .Recomendation-component{
+        margin: 1%;
+        width: 90%;
+        height: 36vh;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 890px) {
+    .container {
+        font-size: 16px;
+    }
+    .Recomendation-component{
+        height: 30vh;
+    }
     .Dashboard-container {
         width: 90%;
     }
     #dropdown {
         width: 100%;
+    }
+    .table-Header{ 
+        font-size: 1em;
+    }
+    td{
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 650px) {
+    .Recomendation-component{
+        height: 30vh;
+    }
+}
+@media (max-width: 480px) {
+    .Recomendation-component{
+        height: 17vh;
+    }
+}
+
+@media (max-width: 320px) {
+    .Recomendation-component{
+        height: 15vh;
     }
 }

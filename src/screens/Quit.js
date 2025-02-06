@@ -16,16 +16,11 @@ const [change,setChange] = useState('');
 const handleChange = (event, questionName) => {
     const target = event.target;
     const newValue = event.target.getAttribute('data-value2');
-    console.log('new:', newValue)
-    const selectedQuestion = questions.find((question) => question.name === target.name);
-
-    const selectedOption = selectedQuestion.options.find((opt) => opt.radioValue === target.value);
-
     setSelectedValues((prevValues) => ({
     ...prevValues,
     [questionName]: newValue,
     }));
-    console.log(`Pregunta: ${questionName}, Valor seleccionado: ${selectedOption}`);
+
     const nextState = questions.map((question) => {
     if (question.name !== target.name) {
         return question;
@@ -45,8 +40,12 @@ const handleChange = (event, questionName) => {
     });
     setQuestions(nextState);
 };
+
+
+
 const handleInputText = (event,actualizador) => {
     const newValue = event.target.value;
+    setSalida(newValue);
     actualizador((prevValues) => ({
     ...prevValues,
     'Salida': newValue,
@@ -54,6 +53,7 @@ const handleInputText = (event,actualizador) => {
 };
 const handleInputText2 = (event,actualizador) => {
     const newValue = event.target.value;
+    setActions(newValue);
     actualizador((prevValues) => ({
     ...prevValues,
     'Actions': newValue,
@@ -61,23 +61,10 @@ const handleInputText2 = (event,actualizador) => {
 };
 const handleInputText3 = (event,actualizador) => {
     const newValue = event.target.value;
+    setChange(newValue);
     actualizador((prevValues) => ({
     ...prevValues,
     'Change': newValue,
-    }));
-};
-const handleInputText4 = (event,actualizador) => {
-    const newValue = event.target.value;
-    actualizador((prevValues) => ({
-    ...prevValues,
-    'Payroll': newValue,
-    }));
-};
-const handleInputText5 = (event,actualizador) => {
-    const newValue = event.target.value;
-    actualizador((prevValues) => ({
-    ...prevValues,
-    'Comments': newValue,
     }));
 };
 const handleInputText6 = (event,actualizador) => {
@@ -98,9 +85,8 @@ const handleName =(e)=>{
 }
 
 const handleSelectChange = (event,questionName) => {
-    setSelectedOption(event.target.value);
-
     const newValue = event.target.value;
+    setSelectedOption(newValue);
     setSelectedValues((prevValues) => ({
         ...prevValues,
         [questionName]: newValue,
@@ -204,26 +190,92 @@ const renderBasedOnOption = () => {
     }
 };
 
-const saveInfo= async()=>{
-    const clavesEsperadas = [ '3','4','5','6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22'];
+const renderPayrollError=()=>{
+    if(selectedValues[19]==="a) Si"){
+        return(
+            questions.slice(22).map((question, idx) => (
+                <div key={`group-${idx}`}>
+                    <h3>
+                    {19}.{idx+1} {question.questionText}
+                    </h3>
+                    {question.options.map((option, idx) => {
+                    return (
+                        <div key={`option-${idx}`}>
+                        <input
+                            type="radio"
+                            name={question.name}
+                            value={option.radioValue}
+                            data-value2={option.choice}
+                            checked={option.selected}
+                            onChange={(event) => handleChange(event, question.name)} 
+                        />
+                        {option.choice}
+                        </div>
+                    );
+                    })}
+                </div>
+                ))
+        )
+    }else{
+        return;
+    }
+}
+const renderEvent=()=>{
+    if(selectedValues[18]!=="g) Ninguna"){
+        return(
+            <div>
+                <h3>23. Basado en el evento que presenciaste, favor de describir los hechos y nombres de personas involucradas</h3>
+                <textarea
+                value={change.Change}
+                onChange={(event) => handleInputText6(event, setSelectedValues)}
+                rows="5"
+                cols="80"
+                placeholder="Escribe aquí..."
+                />
+            </div>
+        )
+    }else{
+        return;
+    }
+}
 
+const saveInfo= async()=>{
+    const clavesEsperadas = [ '3','4','5','6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18','19'];
     const clavesFaltantes = clavesEsperadas.filter(clave => 
     !selectedValues.hasOwnProperty(clave) || selectedValues[clave] === undefined || selectedValues[clave] === ''
     );
-
-    if (clavesFaltantes.length > 0) {
-    console.log(selectedValues);
+    if (!name) {
+        alert("Te falta escribir tu nombre");
+        return;
+    } else if (!salida){
+        alert("Te falta responder la pregunta 20");
+    } else if (!actions){
+        alert("Te falta responder la pregunta 21");
+    } else if (!change){
+        alert("Te falta responder la pregunta 22");
+    } else if ( salida && actions && change && name && clavesFaltantes.length > 0) {
     alert(`Faltan las siguientes respuestas: ${clavesFaltantes.join(', ')}`);
     } else {
-    console.log(selectedValues);
         try {
-        await addDoc(collection(db,'employees'),{
-        ...selectedValues
-        })
-        console.log('-',selectedValues)
-        setSelectedValues({})
+            await addDoc(collection(db,'employees'),{
+            ...selectedValues
+            })
+            const resetQuestions = questions.map(question => ({
+                ...question,
+                options: question.options.map(option => ({
+                    ...option,
+                    selected: false
+                }))
+            }));
+            setQuestions(resetQuestions);
+            setSelectedValues({});
+            setSalida('');
+            setActions('');
+            setChange('');
+            setName('');
+            alert('Gracias por tu feedback');
         } catch (error) {
-            console.log(error)
+            alert('Se presento el siguiente error: ', error);
         }
     alert('Todas las respuestas están presentes.');
     }
@@ -252,7 +304,7 @@ return (
         {renderBasedOnOption()}
         </div>
 
-        {questions.slice(5).map((question, idx) => (
+        {questions.slice(5,22).map((question, idx) => (
         <div key={`group-${idx}`}>
             <h3>
             {idx + 3}. {question.questionText}
@@ -274,8 +326,9 @@ return (
             })}
         </div>
         ))}
+        {renderPayrollError()}
         <div>
-            <h3>Nos puedes platicar mas sobre tu salida</h3>
+            <h3>20. Nos puedes platicar mas sobre tu salida</h3>
             <textarea
             value={salida.Salida}
             onChange={(event) => handleInputText(event, setSelectedValues)}
@@ -285,7 +338,7 @@ return (
             />
         </div>
         <div>
-            <h3>¿Que podriamos haber hecho para que te quedarás más tiempo con nosotros?</h3>
+            <h3>21. ¿Que podriamos haber hecho para que te quedarás más tiempo con nosotros?</h3>
             <textarea
             value={actions.Actions}
             onChange={(event) => handleInputText2(event, setSelectedValues)}
@@ -295,7 +348,7 @@ return (
             />
         </div>
         <div>
-            <h3>Si hubieras tenido la oportunidad de cambiar algo en Colektia ¿Qué seria?</h3>
+            <h3>22. Si hubieras tenido la oportunidad de cambiar algo en Colektia ¿Qué seria?</h3>
             <textarea
             value={change.Change}
             onChange={(event) => handleInputText3(event, setSelectedValues)}
@@ -304,36 +357,7 @@ return (
             placeholder="Escribe aquí..."
             />
         </div>
-        <div>
-            <h3>¿Cual fue el error de nómina que tuviste?</h3>
-            <textarea
-            value={change.Change}
-            onChange={(event) => handleInputText4(event, setSelectedValues)}
-            rows="5"
-            cols="80"
-            placeholder="Escribe aquí..."
-            />
-        </div>
-        <div>
-            <h3>¿Algo adicional que quisieras compartir?</h3>
-            <textarea
-            value={change.Change}
-            onChange={(event) => handleInputText5(event, setSelectedValues)}
-            rows="5"
-            cols="80"
-            placeholder="Escribe aquí..."
-            />
-        </div>
-        <div>
-            <h3>Basado en el evento que presenciaste, favor de describir los hechos y nombres de personas involucradas</h3>
-            <textarea
-            value={change.Change}
-            onChange={(event) => handleInputText6(event, setSelectedValues)}
-            rows="5"
-            cols="80"
-            placeholder="Escribe aquí..."
-            />
-        </div>
+        {renderEvent()}
         <div>
         <button className="sendInfo" onClick={saveInfo} >Enviar</button>
         </div>

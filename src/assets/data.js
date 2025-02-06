@@ -16,7 +16,7 @@ export const data = [
         { choice: "b) No se relaciona a mi carrera", radioValue: "q2-b", selected: false },
         { choice: "c) No hay desarrollo profesional", radioValue: "q2-c", selected: false },
         { choice: "d) Cercania a mi domicilio", radioValue: "q2-d", selected: false },
-        { choice: "e) Desacuerdo con politicas de la empresa", radioValue: "q1-d", selected: false } ]
+        { choice: "e) Desacuerdo con politicas de la empresa", radioValue: "q1-e", selected: false } ]
     },
     {
     questionText:
@@ -85,8 +85,8 @@ export const data = [
         name: "7",
         options: [
             { choice: "a) Bueno", radioValue: "q10-a", selected: false },
-            { choice: "b) Regular", radioValue: "q10-a", selected: false },
-            { choice: "c) Malo", radioValue: "q10-b", selected: false } ]
+            { choice: "b) Regular", radioValue: "q10-b", selected: false },
+            { choice: "c) Malo", radioValue: "q10-c", selected: false } ]
     },
     {
         questionText: "¿Que tan satisfecho estuviste con la capacitación que se te dio para desempeñar tus funciones?",
@@ -112,93 +112,65 @@ export const data = [
             { choice: "c) No", radioValue: "q13-c", selected: false } ]
     },
     {
-        questionText: "¿Experimentaste errores en los pagos de tu nomina?",
-        name: "11",
-        options: [
-            { choice: "a) Si", radioValue: "q14-a", selected: false },
-            { choice: "b) No", radioValue: "q14-b", selected: false } ]
-    },
-    {
-        questionText: "El error de nomina, ¿Te llevó a pensar en darte de baja?",
-        name: "12",
-        options: [
-            { choice: "a) Si", radioValue: "q15-a", selected: false },
-            { choice: "b) No", radioValue: "q15-b", selected: false } ]
-    },
-    {
-        questionText: "¿Se resolvio el error de nomina?",
-        name: "13",
-        options: [
-            { choice: "a) Si", radioValue: "q16-a", selected: false },
-            { choice: "b) No", radioValue: "q16-b", selected: false } ]
-    },
-    {
         questionText: "¿Hicimos alguna retención para que te quedaras más tiempo?",
-        name: "14",
+        name: "11",
         options: [
             { choice: "a) Si", radioValue: "q17-a", selected: false },
             { choice: "b) No", radioValue: "q17-b", selected: false } ]
     },
     {
         questionText: "¿Podriamos haber hecho algo para que te quedaras?",
-        name: "15",
+        name: "12",
         options: [
             { choice: "a) Si", radioValue: "q18-a", selected: false },
             { choice: "b) No", radioValue: "q18-b", selected: false } ]
     },
     {
         questionText: "¿Colektia te ofrecio la opción de crecimiento y plan de carrera?",
-        name: "16",
+        name: "13",
         options: [
             { choice: "a) Si", radioValue: "q19-a", selected: false },
             { choice: "b) No", radioValue: "q19-b", selected: false } ]
     },
     {
         questionText: "¿Con que frecuencia recibiste Feedback de tu lider en tu ultimo mes?",
-        name: "17",
+        name: "14",
         options: [
             { choice: "a) 1 vez a la semana", radioValue: "q20-a", selected: false },
             { choice: "b) 2 veces a la semana", radioValue: "q20-b", selected: false },
-            { choice: "c) Mas de 3 veces a la semana", radioValue: "q20-b", selected: false },
-            { choice: "d) Nunca", radioValue: "q20-b", selected: false } ]
-    },
-    {
-        questionText: "¿El sueldo y comisiones que recibiste fueron acorde a tu trabajo?",
-        name: "18",
-        options: [
-            { choice: "a) Si", radioValue: "q21-a", selected: false },
-            { choice: "b) No", radioValue: "q21-b", selected: false } ]
+            { choice: "c) Mas de 3 veces a la semana", radioValue: "q20-c", selected: false },
+            { choice: "d) Nunca", radioValue: "q20-d", selected: false } ]
     },
     {
         questionText: "¿La propuesta economica que se te dio en reclutamiento fue respetada?",
-        name: "19",
+        name: "15",
         options: [
             { choice: "a) Si", radioValue: "q22-a", selected: false },
             { choice: "b) No", radioValue: "q22-b", selected: false } ]
     },
     {
         questionText: "¿Que mejorarias del proceso de reclutamiento?",
-        name: "20",
+        name: "16",
         options: [
             { choice: "a) Información exacta y precisa", radioValue: "q23-a", selected: false },
             { choice: "b) Mejorar el tiempo de reclutamiento", radioValue: "q23-b", selected: false },
             { choice: "c) Modalidad de las entrevistas", radioValue: "q23-c", selected: false },
             { choice: "d) Mayor formalidad del proceso", radioValue: "q23-d", selected: false },
-            { choice: "e) Todas las anteriores", radioValue: "q23-e", selected: false } ]
+            { choice: "e) Nada", radioValue: "q23-e", selected: false } ]
     },
     {
         questionText: "¿Que mejorarias del proceso de capacitación?",
-        name: "21",
+        name: "17",
         options: [
             { choice: "a) Más tiempo de practica", radioValue: "q24-a", selected: false },
             { choice: "b) Información proporcionada", radioValue: "q24-b", selected: false },
             { choice: "c) Las habilidades del entrenador", radioValue: "q24-c", selected: false },
             { choice: "d) Mayor interacción con el capacitador", radioValue: "q24-d", selected: false },
-            { choice: "e) Ninguna", radioValue: "q24-e", selected: false } ]
+            { choice: "e) Nada", radioValue: "q24-e", selected: false } ]
     },
     {
         questionText: "Detectaste o viviste actividades como:",
-        name: "22",
+        name: "18",
         options: [
             { choice: "a) Hostigamiento laboral", radioValue: "q25-a", selected: false },
             { choice: "b) Falta de integridad", radioValue: "q25-b", selected: false },
@@ -207,5 +179,26 @@ export const data = [
             { choice: "e) Inseguridad", radioValue: "q25-e", selected: false },
             { choice: "f) Venta o consumo de drogas", radioValue: "q25-f", selected: false },
             { choice: "g) Ninguna", radioValue: "q25-g", selected: false } ]
+    },
+    {
+        questionText: "¿Experimentaste errores en los pagos de tu nomina?",
+        name: "19",
+        options: [
+            { choice: "a) Si", radioValue: "q14-a", selected: false },
+            { choice: "b) No", radioValue: "q14-b", selected: false } ]
+    },
+    {
+        questionText: "El error de nomina, ¿Te llevó a pensar en darte de baja?",
+        name: "20",
+        options: [
+            { choice: "a) Si", radioValue: "q15-a", selected: false },
+            { choice: "b) No", radioValue: "q15-b", selected: false } ]
+    },
+    {
+        questionText: "¿Se resolvio el error de nomina?",
+        name: "21",
+        options: [
+            { choice: "a) Si", radioValue: "q16-a", selected: false },
+            { choice: "b) No", radioValue: "q16-b", selected: false } ]
     }
 ];
