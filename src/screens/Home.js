@@ -116,7 +116,7 @@ const Home = () => {
             newData.push({ id: doc.id, ...doc.data() });
         });
         setData(newData)
-        console.log(data,': ', data.length)
+        console.log(data)
     };
     
     useEffect(() => {
@@ -280,7 +280,7 @@ const Home = () => {
         setRequest(valueForRequest);
         setTrash(valueForTrash);
     } 
-    console.log(data,': ', data.length)
+    console.log(data)
 
     }, [data]);
 
@@ -321,11 +321,11 @@ const Home = () => {
         ],
     };
     const personalCategory = {
-        labels: ['Cambio de domicilio', 'Emergencia personal', 'Hijos', 'Distancia', 'Horarios','Razones familiares','Salud','Tiempo de translado'],
+        labels: ['Cambio de domicilio', 'Emergencia personal', 'Hijos', 'Horarios','Razones familiares','Salud','Tiempo de translado'],
         datasets: [
         {
             label: 'Motivos personales',
-            data: [personalReason.filter(item => item === 'a) Cambio de domicilio').length / personalReason.length, personalReason.filter(item => item === 'b) Emergencia personal o familiar').length / totalRespondents, personalReason.filter(item => item === 'c) Hijos').length / totalRespondents, personalReason.filter(item => item === 'd) Incompatibilidad de horarios con mis actividades personales').length / totalRespondents, personalReason.filter(item => item === 'e) Razones familiares').length / totalRespondents, personalReason.filter(item => item === 'f) Salud').length / totalRespondents, personalReason.filter(item => item === 'g) Tiempo de translado o dificultad del transporte').length / totalRespondents ],
+            data: [personalReason.filter(item => item === 'a) Cambio de domicilio').length / personalReason.length, personalReason.filter(item => item === 'b) Emergencia personal o familiar').length / personalReason.length, personalReason.filter(item => item === 'c) Hijos').length / personalReason.length, personalReason.filter(item => item === 'd) Incompatibilidad de horarios con mis actividades personales').length / personalReason.length, personalReason.filter(item => item === 'e) Razones familiares').length / personalReason.length, personalReason.filter(item => item === 'f) Salud').length / personalReason.length, personalReason.filter(item => item === 'g) Tiempo de translado o dificultad del transporte').length / personalReason.length ],
             backgroundColor: 'rgba(255,255,255, 0.8)',
             borderColor: 'rgba(255,255,255, 1)',
             borderWidth: 1,
@@ -337,7 +337,7 @@ const Home = () => {
         datasets: [
         {
             label: 'Factores de Desmotivación',
-            data: [personalReason.filter(item => item === 'a) Ambiente laboral').length / personalReason.length, personalReason.filter(item => item === 'b) Cambio de campaña').length / personalReason.length, personalReason.filter(item => item === 'c) Desacuerdo con las politicas de la empresa').length / personalReason.length, personalReason.filter(item => item === 'd) Mala relación con otras áreas').length / personalReason.length, personalReason.filter(item => item === 'e) No es lo que esperaba').length / personalReason.length, personalReason.filter(item => item === 'f) No veo futuro').length / personalReason.length ],
+            data: [desmotivation.filter(item => item === 'a) Ambiente laboral').length / desmotivation.length, desmotivation.filter(item => item === 'b) Cambio de campaña').length / desmotivation.length, desmotivation.filter(item => item === 'c) Desacuerdo con las politicas de la empresa').length / desmotivation.length, desmotivation.filter(item => item === 'd) Mala relación con otras áreas').length / desmotivation.length, desmotivation.filter(item => item === 'e) No es lo que esperaba').length / desmotivation.length, desmotivation.filter(item => item === 'f) No veo futuro').length / desmotivation.length ],
             backgroundColor: 'rgba(255,255,255, 0.8)',
             borderColor: 'rgba(255,255,255, 1)',
             borderWidth: 1,
