@@ -12,6 +12,7 @@ const [selectedOption, setSelectedOption] = useState("");
 const [salida, setSalida] = useState("");
 const [actions, setActions] = useState('');
 const [change,setChange] = useState('');
+const [newEvent, setNewEvent] = useState(null);
 
 const handleChange = (event, questionName) => {
     const target = event.target;
@@ -69,6 +70,7 @@ const handleInputText3 = (event,actualizador) => {
 };
 const handleInputText6 = (event,actualizador) => {
     const newValue = event.target.value;
+    setNewEvent(newValue)
     actualizador((prevValues) => ({
     ...prevValues,
     'Event': newValue,
@@ -253,6 +255,8 @@ const saveInfo= async()=>{
         alert("Te falta responder la pregunta 21");
     } else if (!change){
         alert("Te falta responder la pregunta 22");
+    }else if (selectedValues[18]!=="g) Ninguna" && !newEvent){
+        alert("Te falta responder la pregunta 23")
     } else if ( salida && actions && change && name && clavesFaltantes.length > 0) {
     alert(`Faltan las siguientes respuestas: ${clavesFaltantes.join(', ')}`);
     } else {
