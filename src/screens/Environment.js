@@ -94,7 +94,7 @@ const saveInfo= async()=>{
 return (
     <div className="main">
         <div className="Header-container">
-            <h1 >Encuesta de satisfacción del proceso de reclutamiento</h1>
+            <h1 >Encuesta de satisfacción del proceso de onboarding</h1>
             <h2>¡Tu opinión cuenta! Ayúdanos a mejorar.</h2>
             <h3>Responde nuestra encuesta de satisfacción y ayúdanos a identificar áreas de mejora en la empresa</h3>
         </div>
