@@ -301,6 +301,8 @@ const reRenderTheScreen = () => {
 
     }, [data]);
 
+
+    
     const newSetData = {
         labels: ['Empleo', 'Escuela', 'Motivos personales', 'Desmotivación'],
         datasets: [
