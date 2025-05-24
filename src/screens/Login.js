@@ -1,3 +1,4 @@
+import '../styles/login-styles.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
