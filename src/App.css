@@ -1,6 +1,6 @@
 :root {
-  --ck-light-bg-color: #ff6464;
-  --ck-light-text-color: #fff;
+  --ck-light-bg-color: #fff;
+  --ck-light-text-color: #ff6464;
 }
 * {
   box-sizing: border-box;

@@ -1,0 +1,18 @@
+:root {
+    --ck-light-bg-color: #fff;
+    --ck-light-text-color: #ff6464;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.mainBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+

@@ -1,4 +1,4 @@
-import { BrowserRouter,Route,Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import Quit from "./screens/Quit";
 import Home from "./screens/Home";
@@ -6,22 +6,38 @@ import Recruitment from "./screens/Recruitment";
 import Training from "./screens/Training";
 import Reject from './screens/Reject';
 import Environment from './screens/Environment';
+import Login from './screens/Login';
+import Dashboard from './screens/Dashboard';
+import Capture from './screens/Capture';
+import TrainingDash from './screens/TrainingDash';
+import Skills from './screens/Skills';
+import CandidateProfile from './screens/CandidateProfile';
+import Menu from './screens/Menu';
 
-export default function App() {
+function App() {
+  const user ="";
 
   return (
     <div className="App-main">
       <BrowserRouter>
         <Routes>
-          <Route path='/home' element={<Home />}/>
-          <Route path='/Recruitment' element={<Recruitment />}/>
-          <Route path='/Training' element={<Training />}/>
-          <Route path='/Environment' element={<Environment />}/>
-          <Route path='/Reject' element={<Reject />}/>
-          <Route path="/Quit" element={<Quit />}/>
-          <Route path='*' element={<Home />} />
+          <Route path="/" element={user ? <Navigate to={user.rol === "jefe" ? "/dashboard" : "/Capture"} /> : <Login />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/Capture' element={<Capture />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/Recruitment' element={<Recruitment />} />
+          <Route path='/Training' element={<Training />} />
+          <Route path='/CandidateProfile' element={<CandidateProfile />} />
+          <Route path='/Skills' element={<Skills />} />
+          <Route path='/Environment' element={<Environment />} />
+          <Route path='/Reject' element={<Reject />} />
+          <Route path="/Quit" element={<Quit />} />
+          <Route path="/TrainingDash" element={<TrainingDash />} />
+          <Route path='*' element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
-};
+}
+
+export default App;

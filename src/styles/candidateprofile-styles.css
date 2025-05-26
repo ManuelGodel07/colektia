@@ -1,0 +1,21 @@
+:root {
+    --ck-light-bg-color: #fff;
+    --ck-light-text-color: #ff6464;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: .5rem;
+    position: absolute;
+    left: 0px;
+    background-color: #ececec;
+}

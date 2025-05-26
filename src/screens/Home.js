@@ -10,6 +10,7 @@ import '../styles/Home.css'
 const Home = () => {
     const [selectedOption, setSelectedOption] = useState('');
     const [data, setData] = useState([]);
+    const [dataShadow, setDataShadow] = useState([]);
     const [recomendations, setRecomendations] = useState([]);
     const [category,setCategory] = useState([]);
     const [reason, setReason] = useState([]);
@@ -79,7 +80,8 @@ const Home = () => {
     const [problem, setProblem] = useState([]);
     const [request, setRequest] = useState([]);
     const [trash, setTrash] = useState([]);
-
+    const [startNewDate, setNewStartDate] = useState('');
+    const [endNewDate, setEndNewDate] = useState('');
     const totalRespondents =  data.length;
 
     ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -116,9 +118,24 @@ const Home = () => {
             newData.push({ id: doc.id, ...doc.data() });
         });
         setData(newData)
+        setDataShadow(newData)
         console.log(data)
     };
     
+const reRenderTheScreen = () => {
+    const filtradosConFecha = dataShadow.filter(obj => {
+        if (!obj.fecha) {
+            console.log("❌ Sin fecha:", obj);
+            return false;
+        }
+        console.log("✅ Comparando", obj.fecha, "con rango", startNewDate, "-", endNewDate);
+        return obj.fecha >= startNewDate && obj.fecha <= endNewDate;
+    });
+
+    setData(filtradosConFecha);
+    console.log("🟢 Resultado final filtrado:", filtradosConFecha);
+};
+
     useEffect(() => {
         if (data.length > 0 && selectedOption ==='employees') {
         const valueFor1 = data.map(obj => obj['undefined']).filter(value => value !== undefined);
@@ -231,7 +248,7 @@ const Home = () => {
         setInsight(valueFor9);
         setName(valueForName);
     } else if(data.length > 0 && selectedOption ==='envi'){
-        const valueFor1 = data.map(obj => obj['1']).filter(value => value !== undefined);
+        const valueFor1 = data.map(obj => obj['1']).filter(value => value !== undefined && value >= startNewDate || value <= setEndNewDate);
         const valueFor2 = data.map(obj => obj['2']).filter(value => value !== undefined);
         const valueFor3 = data.map(obj => obj['3']).filter(value => value !== undefined);
         const valueFor4 = data.map(obj => obj['4']).filter(value => value !== undefined);
@@ -284,6 +301,8 @@ const Home = () => {
 
     }, [data]);
 
+
+    
     const newSetData = {
         labels: ['Empleo', 'Escuela', 'Motivos personales', 'Desmotivación'],
         datasets: [
@@ -1306,7 +1325,6 @@ const Home = () => {
                 </>
             )
         }
-
     }
     const dashTitle=()=>{
         if(selectedOption==='employees'){
@@ -1346,6 +1364,20 @@ const Home = () => {
             )
         }
     }
+    const filterWindow=()=>{
+
+            console.log("Hello world", startNewDate)
+            console.log("New Date", endNewDate)
+        return(
+            <div>
+                <label>Filtra por fecha</label>
+                <input type='date' onChange={(e)=> setNewStartDate(e.target.value)}/>
+                <input type='date' onChange={(e)=> setEndNewDate(e.target.value)}/>
+                <button onClick={()=>reRenderTheScreen()}>Filtrar</button>
+                
+            </div>
+        )
+    }
 
     return (
         <div className='container'>
@@ -1365,6 +1397,7 @@ const Home = () => {
                 </select>
             </section>
             {dashTitle()}
+            {filterWindow()}
             {renderGraph()}
         </div>
     )

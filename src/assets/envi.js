@@ -3,10 +3,10 @@ export const data = [
         questionText: "¿Cuánto tiempo llevas trabajando con Nosotros?",
         name: "1",
         options: [
-            { choice: "a) 1 mes", radioValue: "q1-a", selected: false },
-            { choice: "b) 2 meses", radioValue: "q1-b", selected: false },
-            { choice: "c) 3 meses", radioValue: "q1-c", selected: false },
-            { choice: "d) Mas de 6 meses", radioValue: "q1-d", selected: false },
+            { choice: "a) Menos de 1 mes", radioValue: "q1-a", selected: false },
+            { choice: "b) Menos de 2 meses", radioValue: "q1-b", selected: false },
+            { choice: "c) Menos de 3 meses", radioValue: "q1-c", selected: false },
+            { choice: "d) Más de 3 meses", radioValue: "q1-d", selected: false },
             { choice: "e) De 1 a 3 años", radioValue: "q1-e", selected: false },
             { choice: "f) Más de 3 años", radioValue: "q1-f", selected: false }
         ]
