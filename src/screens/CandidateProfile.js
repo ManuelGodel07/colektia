@@ -16,8 +16,8 @@ const [formData, setFormData] = useState({
     experience: "",
     nexus: "",
     bitwarden: "",
-    inputa: "",
-    inputb: "",
+    country: "",
+    cartera: "",
     recruit: "",
     onboarding: "",
     comment: "",
@@ -69,8 +69,8 @@ return (
             <th>Experiencia</th>
             <th>Nexus</th>
             <th>Bitwarden</th>
-            <th>Input a</th>
-            <th>Input b</th>
+            <th>Country</th>
+            <th>Cartera</th>
             <th>Encuesta reclu</th>
             <th>Encuesta onboarding</th>
             <th>Comentario</th>

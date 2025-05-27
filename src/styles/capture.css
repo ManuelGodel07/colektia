@@ -1,13 +1,128 @@
 :root {
     --ck-light-bg-color: #fff;
     --ck-light-text-color: #ff6464;
+    --ck-dark-text-color: #383838;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.mainScreen{
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50vh;
+    padding: 20px;
+}
+button{
+    padding: 1rem;
+    font-weight: bold;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--ck-dark-text-color);
+    font-size: 1.2rem;
+    border-width: 0;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--ck-dark-text-color);
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.05);
+}
+
+.card-container {
+  width: 50%;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  margin: auto;
+}
+
+.card-header {
+  height: 120px;
+  background: url(https://firebasestorage.googleapis.com/v0/b/fire117-7b888.appspot.com/o/ImageProfile%2F719XjnXVDvL.jpg?alt=media&token=6101e5fc-9079-4197-8890-a0b995f986b8) center/cover no-repeat;
+}
+
+.profile-img {
+  width: 25vh;
+  height: 25vh;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-top: -50px;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0 0;
+}
+
+.highlight {
+  color: var(--ck-dark-text-color);
+}
+
+.position, .company {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 2px 0;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 10px 20px;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--ck-dark-text-color);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-box:hover {
+  transform: scale(1.1);
+}
+
+.icon-box i {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+h2{
+    color: var(--ck-dark-text-color);
+}
+
+.cardPresentationMain{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+}
+.msg-container{
+    width: 30%;
+}

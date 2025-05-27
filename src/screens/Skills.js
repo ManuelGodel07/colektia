@@ -6,21 +6,21 @@ import '../styles/candidateprofile-styles.css';
 const Skills = () => {
 const [formData, setFormData] = useState({
     name: "",
-    startDate: "",
-    endDate: "",
-    grade: "",
-    age: "",
-    email: "",
-    phone: "",
-    attitude: "",
-    experience: "",
-    nexus: "",
-    bitwarden: "",
-    inputa: "",
-    inputb: "",
-    recruit: "",
-    onboarding: "",
-    comment: "",
+    questionComprenhensiton: "",
+    wordRespect: "",
+    goOver: "",
+    conflictResolution: "",
+    securityTalk: "",
+    instructionComprenhensiton: "",
+    tastExecution: "",
+    autonomy: "",
+    corrections: "",
+    randc: "",
+    logicSequense: "",
+    goals: "",
+    systemNavigation: "",
+    tecnErrors: "",
+    newInterface: "",
 });
 const [candidates, setCandidates] = useState([]);
 
@@ -58,21 +58,21 @@ return (
                 <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Fecha de contratación</th>
-                    <th>Fecha de entrega</th>
-                    <th>Grado escolar</th>
-                    <th>Edad</th>
-                    <th>Correo</th>
-                    <th>Teléfono</th>
-                    <th>Actitud</th>
-                    <th>Experiencia</th>
-                    <th>Nexus</th>
-                    <th>Bitwarden</th>
-                    <th>Input a</th>
-                    <th>Input b</th>
-                    <th>Encuesta reclu</th>
-                    <th>Encuesta onboarding</th>
-                    <th>Comentario</th>
+                    <th>Comprensión de preguntas</th>
+                    <th>Respeto al turno de palabra</th>
+                    <th>Necesidad de repaso</th>
+                    <th>Resolución de conflictos</th>
+                    <th>Seguridad al hablar</th>
+                    <th>Comprensión de instrucciones</th>
+                    <th>Ejecucción de tareas</th>
+                    <th>Autonomía</th>
+                    <th>Acciones correctivas</th>
+                    <th>Lectura y compresión</th>
+                    <th>Secuencia lógica</th>
+                    <th>Cumplimiento</th>
+                    <th>Navegación del sistema</th>
+                    <th>Solución de errores técnicos</th>
+                    <th>Aprendizaje de nuevas interfaces</th>
                 </tr>
                 </thead>
                 <tbody>

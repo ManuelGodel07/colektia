@@ -1,0 +1,23 @@
+:root {
+    --ck-light-bg-color: #fff;
+    --ck-light-text-color: #ff6464;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navigation{
+    color: yellow;
+    font-weight: bold;
+    
+}
+.linkMenu {
+  color: rgb(50, 50, 50);
+  text-decoration: none;
+}
+
+.linkMenu:hover {
+  color: rgb(225, 225, 225)
+}
