@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firestore";
-import { collection, addDoc, getDocs, doc, updateDoc, } from "firebase/firestore";
+import { collection, addDoc, getDocs, doc, updateDoc} from "firebase/firestore";
 import "../styles/candidateprofile-styles.css";
 
 const CandidateProfile = () => {
@@ -24,6 +24,8 @@ const [formData, setFormData] = useState({
 });
 
 const [candidates, setCandidates] = useState([]);
+const [editingCell, setEditingCell] = useState(null);
+const [cellValue, setCellValue] = useState("");
 
 const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -52,37 +54,46 @@ useEffect(() => {
     fetchCandidates();
 }, []);
 
+const handleCellClick = (candidateId, key, value) => {
+    setEditingCell(`${candidateId}-${key}`);
+    setCellValue(value);
+};
+
+const handleCellSave = async (candidateId, key) => {
+    try {
+    const docRef = doc(db, "candidates", candidateId);
+    await updateDoc(docRef, { [key]: cellValue });
+
+    const updatedCandidates = candidates.map((c) =>
+        c.id === candidateId ? { ...c, [key]: cellValue } : c
+    );
+    setCandidates(updatedCandidates);
+    setEditingCell(null);
+    } catch (error) {
+    console.error("Error updating cell:", error);
+    }
+};
+
 return (
+    <div className="container">
     <div className="flex-column">
-    <div>
+        <div className="inputTable">
+        <h1>Porfavor agrega a tus nuevos candidatos en la siguiente tabla</h1>
         <table border="1" cellPadding="5" cellSpacing="0">
-        <thead>
+            <thead>
             <tr>
-            <th>Nombre</th>
-            <th>Fecha de contratación</th>
-            <th>Fecha de entrega</th>
-            <th>Grado escolar</th>
-            <th>Edad</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
-            <th>Actitud</th>
-            <th>Experiencia</th>
-            <th>Nexus</th>
-            <th>Bitwarden</th>
-            <th>Country</th>
-            <th>Cartera</th>
-            <th>Encuesta reclu</th>
-            <th>Encuesta onboarding</th>
-            <th>Comentario</th>
+                {Object.keys(formData).map((key) => (
+                <th key={key}>{key}</th>
+                ))}
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr>
-            {Object.keys(formData).map((key) => (
+                {Object.keys(formData).map((key) => (
                 <td key={key}>
-                <input
+                    <input
                     type={
-                    key.includes("Date")
+                        key.includes("Date")
                         ? "date"
                         : key === "age"
                         ? "number"
@@ -95,68 +106,74 @@ return (
                     name={key}
                     value={formData[key]}
                     onChange={handleChange}
-                />
-                </td>
-            ))}
-            </tr>
-        </tbody>
-        </table>
-        <button onClick={handleSave}>Guardar</button>
-    </div>
-
-    <div>
-        <h3>Lista de Candidatos</h3>
-        <table border="1" cellPadding="5" cellSpacing="0">
-        <thead>
-            <tr>
-            {Object.keys(formData).map((key) => (
-                <th key={key}>{key}</th>
-            ))}
-            <th>Actualizar</th>
-            </tr>
-        </thead>
-        <tbody>
-            {candidates.map((candidate) => (
-            <tr key={candidate.id}>
-                {Object.keys(formData).map((key) => (
-                <td key={key}>
-                    {key === "comment" ? (
-                    <input
-                        type="text"
-                        value={candidate.comment || ""}
-                        onChange={(e) => {
-                        const updatedCandidates = candidates.map((c) =>
-                            c.id === candidate.id
-                            ? { ...c, comment: e.target.value }
-                            : c
-                        );
-                        setCandidates(updatedCandidates);
-                        }}
                     />
-                    ) : (
-                    candidate[key]
-                    )}
                 </td>
                 ))}
-                <td>
-                <button
-                    onClick={async () => {
-                    try {
-                        const candidateRef = doc(db, "candidates", candidate.id);
-                        await updateDoc(candidateRef, {
-                        comment: candidate.comment,
-                        });
-                        alert("Comentario actualizado!");
-                    } catch (error) {
-                        console.error("Error updating comment:", error);
-                    }
-                    }}
-                >Actualizar</button>
-                </td>
             </tr>
-            ))}
-        </tbody>
+            </tbody>
         </table>
+        <button onClick={handleSave}>Guardar</button>
+        </div>
+
+        <div>
+        <h3>Lista de Candidatos</h3>
+        <div className="cartel">
+            <table border="1" cellPadding="5" cellSpacing="0">
+            <thead>
+                <tr>
+                {Object.keys(formData).map((key) => (
+                    <th key={key}>{key}</th>
+                ))}
+                </tr>
+            </thead>
+            <tbody>
+                {candidates.map((candidate) => (
+                <tr key={candidate.id}>
+                    {Object.keys(formData).map((key) => {
+                    const isEditing = editingCell === `${candidate.id}-${key}`;
+                    return (
+                        <td key={key}>
+                        {isEditing ? (
+                            <input
+                            type="text"
+                            value={cellValue}
+                            onChange={(e) => setCellValue(e.target.value)}
+                            onBlur={() => handleCellSave(candidate.id, key)}
+                            autoFocus
+                            />
+                        ) : (
+                            <>
+                            {candidate[key]}
+                            <button
+                                onClick={() =>
+                                handleCellClick(
+                                    candidate.id,
+                                    key,
+                                    candidate[key] || ""
+                                )
+                                }
+                                style={{
+                                marginLeft: "5px",
+                                fontSize: "0.7rem",
+                                background: "none",
+                                border: "none",
+                                cursor: "pointer",
+                                color: "#888",
+                                }}
+                            >
+                                ✎
+                            </button>
+                            </>
+                        )}
+                        </td>
+                    );
+                    })}
+                </tr>
+                ))}
+            </tbody>
+            </table>
+        </div>
+        </div>
     </div>
     </div>
 );

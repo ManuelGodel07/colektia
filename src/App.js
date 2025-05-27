@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import './App.css';
 import Quit from "./screens/Quit";
 import Home from "./screens/Home";
 import Recruitment from "./screens/Recruitment";
@@ -18,7 +17,7 @@ function App() {
   const user ="";
 
   return (
-    <div className="App-main">
+    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={user ? <Navigate to={user.rol === "jefe" ? "/dashboard" : "/Capture"} /> : <Login />} />
