@@ -1,6 +1,6 @@
 :root {
     --ck-light-bg-color: #fff;
-    --ck-light-text-color: #ff6464;
+    --ck-light-text-color: #fc857b;
     --ck-dark-text-color: #383838;
 }
 
@@ -8,9 +8,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
+    color:var(--ck-dark-text-color);
+    
+  }
+  
 body{
+
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -20,6 +23,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    height: 100vh;
 }
 
 .menu {
@@ -32,7 +36,7 @@ body{
 button{
     padding: 1rem;
     font-weight: bold;
-    background-color: #fff;
+    background-color: #fc857b;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: var(--ck-dark-text-color);
     font-size: 1.2rem;
@@ -54,13 +58,12 @@ button:hover {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
   margin: auto;
 }
 
 .card-header {
   height: 120px;
-  background: url(https://firebasestorage.googleapis.com/v0/b/fire117-7b888.appspot.com/o/ImageProfile%2F719XjnXVDvL.jpg?alt=media&token=6101e5fc-9079-4197-8890-a0b995f986b8) center/cover no-repeat;
+  background: url(https://firebasestorage.googleapis.com/v0/b/fire117-7b888.appspot.com/o/fondoCK.png?alt=media&token=b10cb601-101e-41d8-a7b9-82daaf5cbd47) center/cover no-repeat;
 }
 
 .profile-img {
@@ -91,7 +94,7 @@ button:hover {
 .contact-icons {
   display: flex;
   justify-content: space-around;
-  margin: 15px 10px 20px;
+  margin: 3%;
 }
 
 .icon-box {
@@ -115,7 +118,11 @@ button:hover {
 h2{
     color: var(--ck-dark-text-color);
 }
-
+.main{
+  margin-top: 0;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+}
 .cardPresentationMain{
     margin-top: 2vh;
     display: flex;
@@ -125,4 +132,5 @@ h2{
 }
 .msg-container{
     width: 30%;
+    color: var(--ck-dark-text-color);
 }

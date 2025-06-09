@@ -1,6 +1,5 @@
 :root {
     --ck-light-bg-color: #fff;
-    --ck-light-text-color: #ff6464;
 }
 
 * {
@@ -8,10 +7,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .navigation{
-    color: yellow;
+    background-color: var(--ck-light-bg-color);
     font-weight: bold;
-    
+    border-radius: 15px;
 }
 .linkMenu {
   color: rgb(50, 50, 50);

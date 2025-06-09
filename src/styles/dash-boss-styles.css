@@ -1,0 +1,113 @@
+:root {
+    --ck-light-bg-color: #fc857b;
+    --ck-light-text-color: #fff;
+    --ck-dark-bg-color: #0f1f44
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--ck-light-text-color);
+}
+
+.dashboard-container {
+    padding: 2rem;
+    background-color: var(--ck-light-text-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    margin: 3vh;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-wide {
+grid-column: span 2;
+}
+
+.card-title {
+font-size: 1.2rem;
+font-weight: 600;
+margin-bottom: 1rem;
+}
+
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.tool-button {
+background: #f0f0f0;
+padding: 0.75rem;
+text-align: center;
+border-radius: 8px;
+font-weight: 500;
+color: #fc857b;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.tool-button:hover {
+background: #fc857b;
+color: #242424;
+}
+
+.circle-chart {
+position: relative;
+width: 160px;
+height: 160px;
+margin: 0 auto;
+}
+
+.circle-chart svg {
+transform: rotate(-90deg);
+width: 100%;
+height: 100%;
+}
+
+.circle-bg {
+fill: none;
+stroke: #cbd5e1;
+stroke-width: 2;
+}
+
+.circle-progress {
+fill: none;
+stroke: #fc857b;
+stroke-width: 2;
+}
+
+.percentage {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 2rem;
+font-weight: bold;
+color: #fc857b;
+}
+
+.text-center {
+text-align: center;
+margin-top: 0.5rem;
+color: #555;
+}

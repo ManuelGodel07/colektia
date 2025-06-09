@@ -31,16 +31,15 @@ export default function LoginScreen() {
       if (!userDoc.rol || !userDoc.nombre || !userDoc.area) {
         throw new Error('Perfil incompleto en la base de datos.');
       }
-
       localStorage.setItem('user', JSON.stringify({
         nombre: userDoc.nombre,
         rol: userDoc.rol,
-        area: userDoc.area
+        area: userDoc.area,
+        img:userDoc.img,
+        puesto:userDoc.puesto
       }));
-
-      // ✅ Redirección según rol
       if (userDoc.rol === 'jefe') {
-        navigate('/dashboard');
+        navigate('/DashBoss');
       } else if (userDoc.rol === 'Analista') {
         navigate('/Capture');
       } else {

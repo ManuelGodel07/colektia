@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+body{
+  background-color: var(--ck-light-bg-color);
+}
+
 .login-container {
   width: 50vw;
   margin: 10%;

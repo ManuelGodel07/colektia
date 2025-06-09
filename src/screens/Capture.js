@@ -1,27 +1,30 @@
-import React, { useState } from "react";
-import TrainingDash from "./TrainingDash";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import TrainingMenu from "./TrainingMenu";
 import '../styles/capture.css'
 
 const Capture =()=>{
-        const [coworkerName, setCoworkerName] = useState('');
-        const [questionComprehesion, setQuestionComprehesion] = useState('');
-        const [wordRespect, setWordRespect] = useState('');
-        const  [inputValue, setInputValue] = useState('');
-        const usuario = "Manuel Ruiz";
+        const [user, setUser] = useState(null);
+        const navigate = useNavigate();
+
+        useEffect(() => {
+        const userData = localStorage.getItem("user");
+        if (userData) {
+        setUser(JSON.parse(userData));
+        }
+        }, []);
 
         const newInput =()=> {
                 return(
                         <div className="card-container">
                                 <div className="card-header" />
-                                <img
-                                        src="https://firebasestorage.googleapis.com/v0/b/fire117-7b888.appspot.com/o/ImageProfile%2Fyo.jpg?alt=media&token=a1efb988-9857-4f5f-a2c1-ca8bea6c0115"
-                                        alt="usuario"
-                                        className="profile-img"
+                                <img src={user.img}
+                                alt="usuario"
+                                className="profile-img"
                                 />
-                                <h2 className="name">{usuario}</h2>
-                                <p className="position">Reclutador</p>
-                                <p className="company">People team</p>
+                                <h2 className="name">{user.nombre}</h2>
+                                <p className="position">{user.puesto}</p>
+                                <p className="company">{user.area} team</p>
                                 <div className="contact-icons">
                                         <div className="icon-box">
                                         <i className="fas fa-phone" />
@@ -36,26 +39,50 @@ const Capture =()=>{
                                         <p>Correo</p>
                                         </div>
                                 </div>
-                        </div>              
+                        </div>
                 )
         }
 
         const messages=()=> {
                 return(
                         <div className="msg-container">
-                                <p>Kpi 1</p>
-                                <p>Kpi 2</p>
-                                <p>Kpi 3</p>
-                                <p>Kpi 4</p>
-                                <p>Kpi 5</p>
+                                <table>
+                                        <thead>
+                                                <tr>
+                                                        <th>KPI´S TRAINING</th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>Tasa de Participación en Programas de Capacitación</td><td>8</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Tasa de Finalización de Cursos</td><td>8</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Satisfacción de onboarding</td><td>8</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Retención del Conocimiento</td><td>8</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Impacto en el Desempeño Laboral</td><td>8</td>
+                                                </tr>
+                                                <tr>
+                                                        <td>Tasa de Promoción Interna</td><td>8</td>
+                                                </tr>
+                                        </tbody>
+                                </table>
                         </div>
                 )
         }
 
         const handleLogOut=()=>{
-                alert("Cerrando sesión")
+                localStorage.removeItem("user");
+                navigate("/Login");   
         }
 
+        if (!user) return <p>Cargando datos del usuario...</p>;
         return(
                 <div className="mainScreen">
                         <div className="menu">
@@ -64,7 +91,7 @@ const Capture =()=>{
                         </div>
                         <section className="main">
                                 <div>
-                                        <p style={{ textAlign: 'center', fontSize:'1.2rem',fontWeight:'bold' }}>Buen dia {usuario}</p>
+                                        <p style={{ textAlign: 'center', fontSize:'1.2rem',fontWeight:'bold' }}>Buen dia {user.nombre}</p>
                                         <p style={{ textAlign: 'center' }}>Bienvenido a tu espacio de trabajo en colektia</p>
                                 </div>
                                 <div className="cardPresentationMain">
@@ -77,5 +104,3 @@ const Capture =()=>{
         )
 }
 export default Capture;
-
-

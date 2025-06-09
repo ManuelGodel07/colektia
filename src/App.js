@@ -11,7 +11,8 @@ import Capture from './screens/Capture';
 import TrainingDash from './screens/TrainingDash';
 import Skills from './screens/Skills';
 import CandidateProfile from './screens/CandidateProfile';
-import Menu from './screens/Menu';
+import DashBoss from './screens/DashBoss';
+import TrDash from './screens/TrDash';
 
 function App() {
   const user ="";
@@ -26,8 +27,10 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/Recruitment' element={<Recruitment />} />
           <Route path='/Training' element={<Training />} />
+          <Route path='/DashBoss' element={<DashBoss />} />
           <Route path='/CandidateProfile' element={<CandidateProfile />} />
           <Route path='/Skills' element={<Skills />} />
+          <Route path='/TrDash' element={<TrDash />} />
           <Route path='/Environment' element={<Environment />} />
           <Route path='/Reject' element={<Reject />} />
           <Route path="/Quit" element={<Quit />} />

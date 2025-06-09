@@ -1,0 +1,37 @@
+:root {
+    --ck-light-bg-color: #fff;
+    --ck-light-text-color: #ff6464;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: .5rem;
+    position: absolute;
+    left: 0px;
+    background-color: #ececec;
+    border-width: 5px;
+    border-radius: 5px;
+}
+
+.inputTable{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cartel{
+    margin-top: 25px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
