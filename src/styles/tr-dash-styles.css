@@ -1,0 +1,16 @@
+.chart-card {
+    background-color: #fff3f3;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    width: 280px;
+    margin: auto;
+    text-align: center;
+}
+.chart-card p {
+    color: #444;
+    font-size: 16px;
+    margin-top: 10px;
+}
