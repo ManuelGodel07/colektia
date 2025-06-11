@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Quit from "./screens/Quit";
 import Home from "./screens/Home";
 import Recruitment from "./screens/Recruitment";
@@ -15,11 +15,11 @@ import DashBoss from './screens/DashBoss';
 import TrDash from './screens/TrDash';
 
 function App() {
-  const user ="";
+  const user = "";
 
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={user ? <Navigate to={user.rol === "jefe" ? "/dashboard" : "/Capture"} /> : <Login />} />
           <Route path='/dashboard' element={<Dashboard />} />
@@ -37,7 +37,7 @@ function App() {
           <Route path="/TrainingDash" element={<TrainingDash />} />
           <Route path='*' element={<Navigate to="/" />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
