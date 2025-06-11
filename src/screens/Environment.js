@@ -1,145 +1,133 @@
-import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../config/firestore";
-import { data } from "../assets/envi";
-import '../styles/recruit-Styles.css'
+import React, { useState } from 'react';
+import { data } from '../assets/envi';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../config/firestore';
+import Swal from 'sweetalert2';
 
 const Environment = () => {
-const [name, setName] = useState('');
-const [questions, setQuestions] = useState(data);
-const [selectedValues, setSelectedValues] = useState({});
-const [salida, setSalida] = useState("");
+  const [form, setForm] = useState({});
+  const [openResponses, setOpenResponses] = useState({
+    ambiente: '',
+    experiencia: '',
+    supervisor: '',
+    razonesNoPermanencia: '',
+    mejoras: '',
+  });
 
-const handleChange = (event, questionName) => {
-    const target = event.target;
-    const newValue = event.target.getAttribute('data-value2');
+  const handleOptionChange = (name, choice) => {
+    setForm(prev => ({ ...prev, [name]: choice }));
+  };
 
-    setSelectedValues((prevValues) => ({
-        ...prevValues,
-        [questionName]: newValue,
-    }));
-    const nextState = questions.map((question) => {
-        if (question.name !== target.name) {
-            return question;
-        }
-        return {
-            ...question,
-            options: question.options.map((opt) => {
-                const checked = opt.radioValue === target.value;
-                return {
-                    ...opt,
-                    selected: checked,
-                };
-                }),
-            currentAnswer: target.value,
-        };
-    });
-    setQuestions(nextState);
-};
+  const handleOpenResponseChange = (field, value) => {
+    setOpenResponses(prev => ({ ...prev, [field]: value }));
+  };
 
-const handleInputText = (event,actualizador) => {
-    const newValue = event.target.value;
-    setSalida(newValue);
-    actualizador((prevValues) => ({
-        ...prevValues,
-        'Salida': newValue,
-    }));
-};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-const handleName =(e)=>{
-    const myName = e.target.value;
-    setName(myName);
-    setSelectedValues((prevValues) => ({
-        ...prevValues,
-        'Name': myName,
-    }));
-}
-
-const saveInfo= async()=>{
-    const clavesEsperadas = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    const clavesFaltantes = clavesEsperadas.filter(clave => 
-        !selectedValues.hasOwnProperty(clave) || selectedValues[clave] === undefined || selectedValues[clave] === ''
-    );
-    if (!name) {
-        alert("Te falta escribir tu nombre");
-        return;
-    } else if (!salida){
-        alert("Te falta escribir tu comentario adicional");
+    try {
+      await addDoc(collection(db, 'environmentSurvey'), {
+        ...form,
+        ...openResponses,
+        timestamp: new Date()
+      });
+      Swal.fire('¡Éxito!', 'La encuesta fue enviada correctamente.', 'success');
+      setForm({});
+      setOpenResponses({
+        ambiente: '',
+        experiencia: '',
+        supervisor: '',
+        razonesNoPermanencia: '',
+        mejoras: '',
+      });
+    } catch (error) {
+      Swal.fire('Error', 'Hubo un problema al enviar la encuesta.', 'error');
     }
-    else if (clavesFaltantes.length > 0 ) {
-        alert(`Faltan las siguientes respuestas: ${clavesFaltantes.join(', ')}`);
-    } else {
-        try {
-            await addDoc(collection(db,'envi'),{
-            ...selectedValues
-            })
-            const resetQuestions = questions.map(question => ({
-                ...question,
-                options: question.options.map(option => ({
-                    ...option,
-                    selected: false
-                }))
-            }));
-            setQuestions(resetQuestions);
-            setSelectedValues({});
-            setSalida('');
-            setName('');
-            alert('Gracias por tu feedback');
-        } catch (error) {
-            alert('Se presento el sig. error: ', error);
-        }
-    }
-}
+  };
 
-return (
+  let questionNumber = 1; // <-- contador de preguntas
+
+  return (
     <div className="main">
         <div className="Header-container">
-            <h1 >Encuesta de satisfacción del proceso de onboarding</h1>
+            <h1>Encuesta de seguimiento</h1>
             <h2>¡Tu opinión cuenta! Ayúdanos a mejorar.</h2>
-            <h3>Responde nuestra encuesta de satisfacción y ayúdanos a identificar áreas de mejora en la empresa</h3>
+            <h3>Responde nuestra encuesta y ayúdanos a identificar áreas de mejora en la empresa</h3>
         </div>
-        <section>
-            <label>Escribe tu nombre completo:
-                <input type="text" value={name} onChange={(event)=>handleName(event)}/>
-            </label>
-            {questions.map((question, idx) => (
-                <div key={`group-${idx}`}>
-                    <h3>
-                    {idx + 1}. {question.questionText}
-                    </h3>
-                    {question.options.map((option, idx) => {
-                    return (
-                        <div key={`option-${idx}`}>
-                        <input
-                            type="radio"
-                            name={question.name}
-                            value={option.radioValue}
-                            data-value2={option.choice}
-                            checked={option.selected}
-                            onChange={(event) => handleChange(event, question.name)} 
-                        />
-                        {option.choice}
-                        </div>
-                    );
-                    })}
-                </div>
+        <form onSubmit={handleSubmit}>
+            {data.map((q) => (
+            <div key={q.name} className="question-block">
+                <p><strong>{questionNumber++}. {q.questionText}</strong></p>
+                {q.options.map((opt) => (
+                <label key={opt.radioValue} className="option">
+                    <input
+                    type="radio"
+                    name={q.name}
+                    value={opt.choice}
+                    checked={form[q.name] === opt.choice}
+                    onChange={() => handleOptionChange(q.name, opt.choice)}
+                    required
+                    />
+                    {opt.choice}
+                </label>
+                ))}
+            </div>
             ))}
-            <div>
-                <h3>Comentarios adicionales:</h3>
-                <textarea
-                value={salida}
-                onChange={(event) => handleInputText(event, setSelectedValues)}
-                rows="5"
-                cols="80"
-                placeholder="Escribe aquí..."
-                />
+
+            {/* Preguntas abiertas */}
+            <div className="question-block">
+            <p><strong>{questionNumber++}. ¿Qué aspectos del ambiente laboral te han ayudado o dificultado adaptarte?</strong></p>
+            <textarea
+                value={openResponses.ambiente}
+                onChange={(e) => handleOpenResponseChange('ambiente', e.target.value)}
+                rows="3"
+                required
+            />
             </div>
-            <div>
-            <button className="sendInfo" onClick={saveInfo} >Enviar</button>
+
+            <div className="question-block">
+            <p><strong>{questionNumber++}. ¿Qué es lo que más valoras de tu experiencia hasta ahora en la empresa?</strong></p>
+            <textarea
+                value={openResponses.experiencia}
+                onChange={(e) => handleOpenResponseChange('experiencia', e.target.value)}
+                rows="3"
+                required
+            />
             </div>
-        </section>
-    </div>
-);
-}
+
+            <div className="question-block">
+            <p><strong>{questionNumber++}. ¿Qué mejorarías de tu relación con tu supervisor?</strong></p>
+            <textarea
+                value={openResponses.supervisor}
+                onChange={(e) => handleOpenResponseChange('supervisor', e.target.value)}
+                rows="3"
+                required
+            />
+            </div>
+
+            <div className="question-block">
+            <p><strong>{questionNumber++}. Si respondiste “No” o “No estoy seguro/a” sobre permanencia, ¿por qué?</strong></p>
+            <textarea
+                value={openResponses.razonesNoPermanencia}
+                onChange={(e) => handleOpenResponseChange('razonesNoPermanencia', e.target.value)}
+                rows="3"
+            />
+            </div>
+
+            <div className="question-block">
+            <p><strong>{questionNumber++}. ¿Qué cambios o mejoras te motivarían a permanecer más tiempo?</strong></p>
+            <textarea
+                value={openResponses.mejoras}
+                onChange={(e) => handleOpenResponseChange('mejoras', e.target.value)}
+                rows="3"
+            />
+            </div>
+
+            <button type="submit" className="submit-btn">Enviar</button>
+        </form>
+        </div>
+    );
+};
+
 
 export default Environment;

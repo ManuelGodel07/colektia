@@ -1,71 +1,143 @@
 export const data = [
     {
-        questionText: "¿Cuánto tiempo llevas trabajando con Nosotros?",
+        questionText: "¿La capacitación estuvo bien estructurada y organizada?",
         name: "1",
         options: [
-            { choice: "a) Menos de 1 mes", radioValue: "q1-a", selected: false },
-            { choice: "b) Menos de 2 meses", radioValue: "q1-b", selected: false },
-            { choice: "c) Menos de 3 meses", radioValue: "q1-c", selected: false },
-            { choice: "d) Más de 3 meses", radioValue: "q1-d", selected: false },
-            { choice: "e) De 1 a 3 años", radioValue: "q1-e", selected: false },
-            { choice: "f) Más de 3 años", radioValue: "q1-f", selected: false }
+            { choice: "a) Insatisfecho", radioValue: "q1-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q1-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q1-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q1-d", selected: false }
         ]
     },
     {
-    questionText: "¿Consideras que los valores de la empresa están claros y son promovidos en el día a día?",
+    questionText: "¿Los contenidos abordados se relacionan directamente con tu puesto?",
     name: "2",
     options: [
-        { choice: "a) Si", radioValue: "q2-a", selected: false },
-        { choice: "b) No", radioValue: "q2-b", selected: false }]
+        { choice: "a) Insatisfecho", radioValue: "q2-a", selected: false },
+        { choice: "b) Parcialmente satisfecho", radioValue: "q2-b", selected: false },
+        { choice: "c) Satisfecho", radioValue: "q2-c", selected: false },
+        { choice: "c) Totalmente satisfecho", radioValue: "q2-d", selected: false } ]
     },
     {
-    questionText: "¿Crees que la empresa fomenta un ambiente profesional y respetuoso?",
+    questionText: "¿La información fue presentada de forma clara?",
     name: "3",
     options: [
-        { choice: "a) Si", radioValue: "q3-a", selected: false },
-        { choice: "b) No", radioValue: "q3-b", selected: false }]
+        { choice: "a) Insatisfecho", radioValue: "q3-a", selected: false },
+        { choice: "b) Parcialmente satisfecho", radioValue: "q3-b", selected: false },
+        { choice: "c) Satisfecho", radioValue: "q3-c", selected: false },
+        { choice: "c) Totalmente satisfecho", radioValue: "q3-d", selected: false }]
     },
     {
-    questionText: "¿Consideras que la comunicación entre el equipo y los supervisores es efectiva?",
+    questionText: "¿El material proporcionado fue útil para tu aprendizaje?",
     name: "4",
     options: [
-        { choice: "a) Si", radioValue: "q4-a", selected: false },
-        { choice: "b) No", radioValue: "q4-b", selected: false }]
+        { choice: "a) Insatisfecho", radioValue: "q4-a", selected: false },
+        { choice: "b) Parcialmente satisfecho", radioValue: "q4-b", selected: false },
+        { choice: "c) Satisfecho", radioValue: "q4-c", selected: false },
+        { choice: "d) Totalmente satisfecho", radioValue: "q4-d", selected: false }
+    ]
     },
     {
-        questionText: "¿Cómo calificarías la colaboración y el trabajo en equipo dentro de tu área?",
+        questionText: "¿Tuviste oportunidad de practicar lo aprendido durante la capacitación?",
         name: "5",
         options: [
-            { choice: "a) Buena", radioValue: "q5-a", selected: false },
-            { choice: "b) Regular", radioValue: "q5-b", selected: false },
-            { choice: "c) Mala", radioValue: "q5-c", selected: false }]
+            { choice: "a) Insatisfecho", radioValue: "q5-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q5-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q5-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q5-d", selected: false }]
     },
     {
-        questionText: "¿Te sientes satisfecho/a con el salario y los beneficios que ofrece la empresa?",
+        questionText: "¿El capacitador usó un lenguaje claro y adecuado?",
         name: "6",
         options: [
-            { choice: "a) Si", radioValue: "q6-a", selected: false },
-            { choice: "b) No", radioValue: "q6-b", selected: false } ]
+            { choice: "a) Insatisfecho", radioValue: "q6-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q6-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q6-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q6-d", selected: false }]
     },
     {
-        questionText: "¿Recibes capacitación y entrenamiento suficiente para mejorar en tu rol?",
+        questionText: "¿Demostró dominio del tema?",
         name: "7",
         options: [
-            { choice: "a) Si", radioValue: "q7-a", selected: false },
-            { choice: "b) No", radioValue: "q7-b", selected: false } ]
+            { choice: "a) Insatisfecho", radioValue: "q7-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q7-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q7-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q7-d", selected: false } ]
     },
     {
-        questionText: "¿Consideras que el entorno de trabajo (infraestructura, herramientas, espacios) es adecuado para tu desempeño?",
+        questionText: "¿Respondió tus dudas de forma efectiva?",
         name: "8",
         options: [
-            { choice: "a) Si", radioValue: "q8-a", selected: false },
-            { choice: "b) No", radioValue: "q8-b", selected: false } ]
+            { choice: "a) Insatisfecho", radioValue: "q8-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q8-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q8-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q8-d", selected: false } ]
     },
     {
-        questionText: "¿Consideras que tienes oportunidades de desarrollo y crecimiento en Colektia?",
+        questionText: "¿Dio ejemplos útiles que facilitaron tu comprensión?",
         name: "9",
         options: [
-            { choice: "a) Si", radioValue: "q9-a", selected: false },
-            { choice: "b) No", radioValue: "q9-b", selected: false } ]
+            { choice: "a) Insatisfecho", radioValue: "q9-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q9-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q9-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q9-d", selected: false } ]
+    },
+    {
+        questionText: "¿Fomentó la participación y el intercambio de ideas?",
+        name: "10",
+        options: [
+            { choice: "a) Insatisfecho", radioValue: "q10-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q10-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q10-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q10-d", selected: false } ]
+    },
+    {
+        questionText: "¿La sesión inició y finalizó puntualmente?",
+        name: "11",
+        options: [
+            { choice: "a) Insatisfecho", radioValue: "q11-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q11-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q11-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q11-d", selected: false } ]
+    },
+    {
+        questionText: "¿Recibiste el horario y detalles de la capacitación con anticipación?",
+        name: "12",
+        options: [
+            { choice: "a) Insatisfecho", radioValue: "q12-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q12-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q12-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q12-d", selected: false } ]
+    },
+    {
+        questionText: "¿La duración de la capacitación fue adecuada para cubrir los temas?",
+        name: "13",
+        options: [
+            { choice: "a) Insatisfecho", radioValue: "q13-a", selected: false },
+            { choice: "b) Parcialmente satisfecho", radioValue: "q13-b", selected: false },
+            { choice: "c) Satisfecho", radioValue: "q13-c", selected: false },
+            { choice: "d) Totalmente satisfecho", radioValue: "q13-d", selected: false } ]
+    },
+    {
+        questionText: "¿Te sientes listo para realizar tus tareas con éxito después de la capacitación?",
+        name: "14",
+        options: [
+            { choice: "a) Si", radioValue: "q14-a", selected: false },
+            { choice: "b) No", radioValue: "q14-b", selected: false } ]
+    },
+    {
+        questionText: "¿Lo aprendido en la capacitación te ayuda en tu desempeño laboral?",
+        name: "15",
+        options: [
+            { choice: "a) Si", radioValue: "q15-a", selected: false },
+            { choice: "b) No", radioValue: "q15-b", selected: false } 
+        ]
+    },
+    {
+        questionText: "¿La capacitación te ayudó a comprender la misión, visión y valores de la empresa?",
+        name: "16",
+        options: [
+            { choice: "a) Si", radioValue: "q16-a", selected: false },
+            { choice: "b) No", radioValue: "q16-b", selected: false } ]
     }
 ];
