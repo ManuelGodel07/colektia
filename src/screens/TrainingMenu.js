@@ -8,7 +8,8 @@ const TrainingMenu = () => {
     <nav className='navigation'>
       <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/TrainingDash'>Dashboard</NavLink>
       <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/Recruitment'>Encuesta de reclutamiento</NavLink>
-      <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/Environment'>Encuesta de clima laboral  </NavLink>
+      <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/Training'>Encuesta de onboarding</NavLink>
+      <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/Environment'>Encuesta de seguimiento</NavLink>
       <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/Skills'>Skills</NavLink>
       <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/CandidateProfile'>Perfil de nuevos ingresos</NavLink>
     </nav>

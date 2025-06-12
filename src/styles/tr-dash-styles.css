@@ -1,14 +1,56 @@
-.chart-card {
-    background-color: #fff3f3;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    color: #333;
-    font-family: 'Segoe UI', sans-serif;
-    width: 280px;
-    margin: auto;
-    text-align: center;
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+  align-items: start;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  box-sizing: border-box;
+  max-width: 1400px;
+  margin: 0 auto;
 }
+
+.chart-card {
+  background: #ffffff;
+  height: 45vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  transition: transform 0.3s;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+}
+
+.chart-card h3 {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+/* Responsive orden de filas */
+@media screen and (min-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .chart-card:nth-child(4),
+  .chart-card:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .dashboard-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .chart-card p {
     color: #444;
     font-size: 16px;

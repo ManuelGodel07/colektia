@@ -67,7 +67,13 @@ const Skills = () => {
     fetchCandidates();
     }, []);
 
-
+    const handleGuide=(pdf)=>{
+        if (pdf) {
+            window.open(pdf, '_blank');
+        } else {
+            console.error("URL del PDF no proporcionada");
+        }
+    }
 
     return (
         <div className="flex-column">
@@ -130,6 +136,7 @@ const Skills = () => {
                     ))}
                 </tbody>
                 </table>
+                                <button onClick={()=>{handleGuide("https://firebasestorage.googleapis.com/v0/b/fire117-7b888.appspot.com/o/Kardex%20de%20Onboarding%20-%20RUBRICA%20EVALUACI%C3%93N%20SOFT%20(1).pdf?alt=media&token=d99d0c61-0407-4687-a1ee-3ebfce77b448")}}>💡</button>
             </div>
         </div>
     );

@@ -121,14 +121,6 @@ const handleCellSave = async (candidateId, key) => {
     }
 };
 
-    const handleGuide=(pdf)=>{
-        if (pdf) {
-            window.open(pdf, '_blank');
-        } else {
-            console.error("URL del PDF no proporcionada");
-        }
-    }
-
 return (
     <div className="container">
     <div className="flex-column">
@@ -223,7 +215,6 @@ return (
                     </tr>
                     ))}
                 </tbody>
-                <button onClick={()=>{handleGuide("https://posgrado.unam.mx/musica/lecturas/LecturaIntroduccionInvestigacionMusical/epistemologia/Descartes-Discurso-Del-Metodo.pdf")}}>💡</button>
             </table>
         </div>
         </div>
