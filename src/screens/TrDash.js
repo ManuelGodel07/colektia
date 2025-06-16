@@ -4,7 +4,7 @@ import { collection, doc, getDocs } from "firebase/firestore";
 import { db } from "../config/firestore";
 import '../styles/tr-dash-styles.css';
 
-const COLORS = ["#0f1f44", "#ffd3cc", "#333333", "#666666", "#8884d8", "#ffc658", "#a28bd4"];
+const COLORS = ["#0f1f44", "#f75f69", "#8a8c8d", "#1e3a5c", "#c7cbcf", "#b94028", "#a28bd4"];
 
 const TrDash = () => {
   const [attendanceData, setAttendanceData] = useState([]);

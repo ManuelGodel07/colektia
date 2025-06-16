@@ -1,14 +1,13 @@
 .dashboard-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  display: flex;
+  gap: 1vw;
+  padding: 1vw;
   justify-items: center;
-  align-items: start;
+  align-items: center;
   background-color: #f9f9f9;
-  min-height: 100vh;
+  min-height: 90vh;
   box-sizing: border-box;
-  max-width: 1400px;
+  max-width: 95vw;
   margin: 0 auto;
 }
 
@@ -17,9 +16,9 @@
   height: 45vh;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 1vw;
   text-align: center;
-  width: 100%;
+  width: 20vw;
   transition: transform 0.3s;
 }
 
