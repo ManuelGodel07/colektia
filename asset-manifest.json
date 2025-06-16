@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/colektia/static/css/main.c5fe93c2.css",
-    "main.js": "/colektia/static/js/main.6ecdeceb.js",
+    "main.js": "/colektia/static/js/main.5c5c4c18.js",
     "static/js/453.2889ee67.chunk.js": "/colektia/static/js/453.2889ee67.chunk.js",
     "index.html": "/colektia/index.html",
     "main.c5fe93c2.css.map": "/colektia/static/css/main.c5fe93c2.css.map",
-    "main.6ecdeceb.js.map": "/colektia/static/js/main.6ecdeceb.js.map",
+    "main.5c5c4c18.js.map": "/colektia/static/js/main.5c5c4c18.js.map",
     "453.2889ee67.chunk.js.map": "/colektia/static/js/453.2889ee67.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c5fe93c2.css",
-    "static/js/main.6ecdeceb.js"
+    "static/js/main.5c5c4c18.js"
   ]
 }
