@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { data } from '../assets/envi';
+import { envi } from '../assets/envi';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../config/firestore';
 import Swal from 'sweetalert2';
@@ -50,12 +50,12 @@ const Environment = () => {
   return (
     <div className="main">
         <div className="Header-container">
-            <h1>Encuesta de seguimiento</h1>
+            <h1>Encuesta de satisfacción del proceso de onboarding y capacitación</h1>
             <h2>¡Tu opinión cuenta! Ayúdanos a mejorar.</h2>
             <h3>Responde nuestra encuesta y ayúdanos a identificar áreas de mejora en la empresa</h3>
         </div>
         <form onSubmit={handleSubmit}>
-            {data.map((q) => (
+            {envi.map((q) => (
             <div key={q.name} className="question-block">
                 <p><strong>{questionNumber++}. {q.questionText}</strong></p>
                 {q.options.map((opt) => (

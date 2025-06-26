@@ -21,29 +21,35 @@ const TrDash = () => {
 
       const asistieron = docs.filter(d => d.attendance === "Asiste a Onboarding").length;
       const enEspera = docs.filter(d => d.attendance === "No se presenta a Onboarding").length;
-      setAttendanceData([ { name: "Asiste a Onboarding", value: asistieron }, { name: "No asiste a Onboarding", value: enEspera }])
-      console.log(`Asistieron: ${docs}`)
+      const waiting = docs.filter(d => d.attendance === "Citado y en espera").length;
+      setAttendanceData([ { name: "Asiste a Onboarding", value: asistieron }, { name: "No asiste a Onboarding", value: enEspera }, { name: "Citado y en espera", value: waiting }])
+      console.log(`Total de registros: ${docs.length}`)
 
 
       const Delivered = docs.filter(d => d.finalStatus === "Entregado a operaciones").length;
-      const quit = docs.filter(d => d.finalStatus === "Renuncia en Onboarding").length;
-      const earlyDead = docs.filter(d => d.finalStatus === "Baja temprana").length;
       const onboardingDead = docs.filter(d => d.finalStatus === "Baja en Onboarding").length;
+      const myDate = docs.filter(d => d.finalStatus === "No se presenta a Onboarding").length;
+      const quit = docs.filter(d => d.finalStatus === "Renuncia en Onboarding").length;
       const runAway = docs.filter(d =>d.finalStatus === "Abandono en Onboarding").length;
-      setStatusData([ { name: "Entregado a operaciones", value: Delivered }, { name: "Renuncia en Onboarding", value: quit }, { name: "Baja temprana", value: earlyDead }, { name: "Renuncia en Onboarding", value: quit }, { name: "Baja en Onboarding", value: onboardingDead }, { name: "Abandono en Onboarding", value: runAway }])
+      const earlyDead = docs.filter(d => d.finalStatus === "Baja temprana").length;
+      const hope = docs.filter(d => d.finalStatus === "Citado y en espera").length;
+      setStatusData([ { name: "Entregado a operaciones", value: Delivered }, { name: "Renuncia en Onboarding", value: quit }, { name: "Baja temprana", value: earlyDead }, { name: "Baja en Onboarding", value: onboardingDead }, { name: "Abandono en Onboarding", value: runAway }, { name: "No se presenta a Onboarding", value: myDate }, { name: "Citado y en espera", value: hope }])
 
-      const santander = docs.filter(d => d.cartera === "Banco Santander").length;
-      const nu = docs.filter(d => d.cartera === "NU México").length;
-      const Nuco = docs.filter(d => d.cartera === "Nuco").length;
-      const andes = docs.filter(d => d.cartera === "Caja los Andes").length;
-      const Falabella = docs.filter(d =>d.cartera === "Falabella").length;
-      setCartera([ { name: "Banco Santander", value: santander }, { name: "NU México", value: nu }, { name: "Nuco", value: Nuco }, { name: "Renuncia en Onboarding", value: quit }, { name: "Caja los Andes", value: andes }, { name: "Falabella", value: Falabella }])
+      const santander = docs.filter(d => d.cartera === "Banco Santander" && d.finalStatus === "Entregado a operaciones").length;
+      const nu = docs.filter(d => d.cartera === "Nu México" && d.finalStatus === "Entregado a operaciones").length;
+      const Nuco = docs.filter(d => d.cartera === "Nuco" && d.finalStatus === "Entregado a operaciones").length;
+      const andes = docs.filter(d => d.cartera === "Caja los Andes" && d.finalStatus === "Entregado a operaciones").length;
+      const Falabella = docs.filter(d => d.cartera === "Falabella" && d.finalStatus === "Entregado a operaciones").length;
+      const LaPolar = docs.filter(d => d.cartera === "La Polar" && d.finalStatus === "Entregado a operaciones").length;
+      setCartera([ { name: "Banco Santander", value: santander }, { name: "NU México", value: nu }, { name: "Nuco", value: Nuco }, { name: "Caja los Andes", value: andes }, { name: "Falabella", value: Falabella }, { name: "La Polar", value: LaPolar }])
+      console.log(`----`)
       console.log(`Cartera: ${nu} ${Nuco}`)
 
-      const Colombia = docs.filter(d => d.country === "Colombia").length;
-      const Mexico = docs.filter(d => d.country === "México").length;
-      const Perú = docs.filter(d => d.country === "Perú").length;
-      const Chile = docs.filter(d => d.country === "Chile").length;
+
+      const Colombia = docs.filter(d => d.country === "Colombia" && d.finalStatus === "Entregado a operaciones").length;
+      const Mexico = docs.filter(d => d.country === "México" && d.finalStatus === "Entregado a operaciones").length;
+      const Perú = docs.filter(d => d.country === "Perú" && d.finalStatus === "Entregado a operaciones").length;
+      const Chile = docs.filter(d => d.country === "Chile" && d.finalStatus === "Entregado a operaciones").length;
       setCountry([ { name: "Colombia", value: Colombia }, { name: "México", value: Mexico }, { name: "Perú", value: Perú }, { name: "Chile", value: Chile }])
 
       const notViable = docs.filter(d => d.viability === "No viable").length;

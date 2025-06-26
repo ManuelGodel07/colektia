@@ -13,6 +13,7 @@ import Skills from './screens/Skills';
 import CandidateProfile from './screens/CandidateProfile';
 import DashBoss from './screens/DashBoss';
 import TrDash from './screens/TrDash';
+import Sender from './screens/Sender';
 
 function App() {
   const user = "";
@@ -31,6 +32,7 @@ function App() {
           <Route path='/CandidateProfile' element={<CandidateProfile />} />
           <Route path='/Skills' element={<Skills />} />
           <Route path='/TrDash' element={<TrDash />} />
+          <Route path='/Sender' element={<Sender />} />
           <Route path='/Environment' element={<Environment />} />
           <Route path='/Reject' element={<Reject />} />
           <Route path="/Quit" element={<Quit />} />
