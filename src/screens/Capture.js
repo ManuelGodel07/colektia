@@ -54,22 +54,7 @@ const Capture =()=>{
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>Tasa de Participación en Programas de Capacitación</td><td>8</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Tasa de Finalización de Cursos</td><td>8</td>
-                                                </tr>
-                                                <tr>
                                                         <td>Satisfacción de onboarding</td><td>8</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Retención del Conocimiento</td><td>8</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Impacto en el Desempeño Laboral</td><td>8</td>
-                                                </tr>
-                                                <tr>
-                                                        <td>Tasa de Promoción Interna</td><td>8</td>
                                                 </tr>
                                         </tbody>
                                 </table>

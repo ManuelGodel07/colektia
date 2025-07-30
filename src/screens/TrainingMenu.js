@@ -7,6 +7,7 @@ const TrainingMenu = () => {
   return (
     <nav className='navigation'>
       {/* <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/Sender'>Sender</NavLink> */}
+      <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/RecruitCatcher'>Recruiter</NavLink>
       <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/TrainingDash'>Tarjetas</NavLink>
       <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/TrDash'>Dashboard</NavLink>
       <NavLink className={({ isActive }) => `${isActive ? 'active-link' : ''} linkMenu`} to='/Recruitment'>Encuesta de reclutamiento</NavLink>

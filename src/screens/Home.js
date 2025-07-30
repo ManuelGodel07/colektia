@@ -122,19 +122,19 @@ const Home = () => {
         console.log(data)
     };
     
-const reRenderTheScreen = () => {
-    const filtradosConFecha = dataShadow.filter(obj => {
-        if (!obj.fecha) {
-            console.log("❌ Sin fecha:", obj);
-            return false;
-        }
-        console.log("✅ Comparando", obj.fecha, "con rango", startNewDate, "-", endNewDate);
-        return obj.fecha >= startNewDate && obj.fecha <= endNewDate;
-    });
+    const reRenderTheScreen = () => {
+        const filtradosConFecha = dataShadow.filter(obj => {
+            if (!obj.fecha) {
+                console.log("❌ Sin fecha:", obj);
+                return false;
+            }
+            console.log("✅ Comparando", obj.fecha, "con rango", startNewDate, "-", endNewDate);
+            return obj.fecha >= startNewDate && obj.fecha <= endNewDate;
+        });
 
-    setData(filtradosConFecha);
-    console.log("🟢 Resultado final filtrado:", filtradosConFecha);
-};
+        setData(filtradosConFecha);
+        console.log("🟢 Resultado final filtrado:", filtradosConFecha);
+    };
 
     useEffect(() => {
         if (data.length > 0 && selectedOption ==='employees') {
