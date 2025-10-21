@@ -5,8 +5,8 @@ import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC48d8-AQSAx5EEH6QFloSeT2JQQyK5w4k",
-  authDomain: "colektia-database.firebaseapp.com",
-  projectId: "colektia-database",
+  authDomain: "Empresa-database.firebaseapp.com",
+  projectId: "Empresa-database",
   storageBucket: "colektia-database.firebasestorage.app",
   messagingSenderId: "399896881211",
   appId: "1:399896881211:web:01c3771bcbab073acc141e",

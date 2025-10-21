@@ -53,21 +53,21 @@ export const data = [
             { choice: "f) No veo futuro", radioValue: "q5-f", selected: false }]
     },
     {
-        questionText: "¿Recomendarias Colektia como una opción de trabajo para familiares y amigos?",
+        questionText: "¿Recomendarias Empresa como una opción de trabajo para familiares y amigos?",
         name: "3",
         options: [
             { choice: "a) Si", radioValue: "q6-a", selected: false },
             { choice: "b) No", radioValue: "q6-b", selected: false } ]
     },
     {
-        questionText: "¿Colektia a través de su Liderazgo promueve su cultura, política y valores?",
+        questionText: "Empresa a través de su Liderazgo promueve su cultura, política y valores?",
         name: "4",
         options: [
             { choice: "a) Si", radioValue: "q7-a", selected: false },
             { choice: "b) No", radioValue: "q7-b", selected: false } ]
     },
     {
-        questionText: "¿Colektia reconoció e incentivo tu trabajo?",
+        questionText: "Empresa reconoció e incentivo tu trabajo?",
         name: "5",
         options: [
             { choice: "a) Si", radioValue: "q8-a", selected: false },
@@ -126,7 +126,7 @@ export const data = [
             { choice: "b) No", radioValue: "q18-b", selected: false } ]
     },
     {
-        questionText: "¿Colektia te ofrecio la opción de crecimiento y plan de carrera?",
+        questionText: "¿Empresa te ofrecio la opción de crecimiento y plan de carrera?",
         name: "13",
         options: [
             { choice: "a) Si", radioValue: "q19-a", selected: false },

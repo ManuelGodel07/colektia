@@ -41,7 +41,7 @@ export const questionsSet = [
             { choice: "c) Mala", radioValue: "q5-c", selected: false }]
     },
     {
-        questionText: "¿Recomendarías a otros trabajar en Colektia?",
+        questionText: "¿Recomendarías a otros trabajar en Empresa?",
         name: "6",
         options: [
             { choice: "a) Si", radioValue: "q6-a", selected: false },

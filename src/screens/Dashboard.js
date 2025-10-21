@@ -80,7 +80,7 @@ const Dashboard =()=>{
                         <section className="main">
                                 <div>
                                         <p style={{ textAlign: 'center', fontSize:'1.2rem',fontWeight:'bold' }}>Buen dia {usuario}</p>
-                                        <p style={{ textAlign: 'center' }}>Bienvenido a tu espacio de trabajo en colektia</p>
+                                        <p style={{ textAlign: 'center' }}>Bienvenido a tu espacio de trabajo en Empresa</p>
                                 </div>
                                 <div className="cardPresentationMain">
                                         {newInput()}

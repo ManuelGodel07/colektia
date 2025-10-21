@@ -367,7 +367,7 @@ const Home = () => {
         labels: ['Si', 'No'],
         datasets: [
         {
-            label: '¿Colektia es una Buena Opción para Trabajar?',
+            label: '¿Empresa es una Buena Opción para Trabajar?',
             data: [ck.filter(item => item === 'a) Si').length / totalRespondents, ck.filter(item => item === 'b) No').length / totalRespondents ],
             backgroundColor: 'rgba(255,255,255, 0.8)',
             borderColor: 'rgba(255,255,255, 1)',
@@ -379,7 +379,7 @@ const Home = () => {
         labels: ['Si', 'No'],
         datasets: [
         {
-            label: 'Promoción de Valores en Colektia',
+            label: 'Promoción de Valores en Empresa',
             data: [leadership.filter(item => item === 'a) Si').length / totalRespondents, leadership.filter(item => item === 'b) No').length / totalRespondents ],
             backgroundColor: 'rgba(255,255,255, 0.8)',
             borderColor: 'rgba(255,255,255, 1)',
@@ -391,7 +391,7 @@ const Home = () => {
         labels: ['Si', 'No'],
         datasets: [
         {
-            label: 'Colektia reconoce e incentiva tu trabajo',
+            label: 'Empresa reconoce e incentiva tu trabajo',
             data: [recognition.filter(item => item === 'a) Si').length / totalRespondents, recognition.filter(item => item === 'b) No').length / totalRespondents ],
             backgroundColor: 'rgba(255,255,255, 0.8)',
             borderColor: 'rgba(255,255,255, 1)',
@@ -523,7 +523,7 @@ const Home = () => {
         labels: ['Si' ,'No'],
         datasets: [
         {
-            label: 'Colektia te ofrecio una opcion de crecimiento laboral',
+            label: 'Empresa te ofrecio una opcion de crecimiento laboral',
             data: [grown.filter(item => item === 'a) Si').length / totalRespondents, grown.filter(item => item === 'b) No').length / totalRespondents ],
             backgroundColor: 'rgba(255,255,255, 0.8)',
             borderColor: 'rgba(255,255,255, 1)',
@@ -813,7 +813,7 @@ const Home = () => {
         labels: ['Si', 'No'],
         datasets: [
         {
-            label: 'Se promueven los valores Colektia en el día a día',
+            label: 'Se promueven los valores Empresa en el día a día',
             data: [promotedValues.filter(item => item === 'a) Si').length / totalRespondents, promotedValues.filter(item => item === 'b) No').length / totalRespondents],
             backgroundColor: 'rgba(255,255,255, 0.8)',
             borderColor: 'rgba(255,255,255, 1)',
@@ -978,7 +978,7 @@ const Home = () => {
         labels: ['Si', 'No'],
         datasets: [
         {
-            label: 'Recomiendan a colektia',
+            label: 'Recomiendan a Empresa',
             data: [referCk.filter(item => item === 'a) Si').length / totalRespondents, referCk.filter(item => item === 'b) No').length / totalRespondents],
             backgroundColor: 'rgba(255,255,255, 0.8)',
             borderColor: 'rgba(255,255,255, 1)',
@@ -1179,7 +1179,7 @@ const Home = () => {
                     </div>
                     <CommentWindow title='Comentarios sobre la experiencia de salida' name={newName} comments={newSalida}/>
                     <CommentWindow title='Opiniones para mejorar la retención' name={newName} comments={newActions} />
-                    <CommentWindow title='Cambios deseados en Colektia' name={newName} comments={newChanges} />
+                    <CommentWindow title='Cambios deseados en Empresa' name={newName} comments={newChanges} />
                     <CommentWindow title='Detalles de incidentes' name={newName} comments={newEvent} />
 {/*                     <CommentWindow title='Errores en nómina según empleados' name={newName} comments={newPayroll} /> */}
 {/*                     <CommentWindow title='Sugerencias y opiniones adicionales' name={newName} comments={newChanges} /> */}
@@ -1382,7 +1382,7 @@ const Home = () => {
     return (
         <div className='container'>
             <div className="Header-container">
-                <h1>Talento Colektia</h1>
+                <h1>Talento Empresa</h1>
                 <h2>¡Bienvenido!</h2>
             </div>
             <Menu />

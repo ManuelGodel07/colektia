@@ -352,7 +352,7 @@ return (
             />
         </div>
         <div>
-            <h3>22. Si hubieras tenido la oportunidad de cambiar algo en Colektia ¿Qué seria?</h3>
+            <h3>22. Si hubieras tenido la oportunidad de cambiar algo en Empresa ¿Qué seria?</h3>
             <textarea
             value={change.Change}
             onChange={(event) => handleInputText3(event, setSelectedValues)}
