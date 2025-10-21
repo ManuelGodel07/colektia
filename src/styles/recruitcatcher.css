@@ -1,5 +1,193 @@
-.myBody{
-    background-color: rgb(59, 59, 59);
-    height: 100vh;
-    width: 100vw;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.p-6 {
+    padding: 24px;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+    position: relative;
+    min-height: 350px;
+    margin-bottom: 16px;
+}
+
+.flex {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+}
+
+.page-group {
+    flex-shrink: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    padding: 16px;
+    transition: box-shadow 0.3s ease;
+    width: 10%;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card input,
+.card select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.card input:focus,
+.card select:focus {
+    outline: none;
+    border-color: #2e7d32;
+}
+
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.opciones label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.mt-4 {
+    margin-top: 20px;
+}
+
+.flex-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    background-color: #2e7d32;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #256628;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #2e7d32;
+}
+
+@media (max-width: 768px) {
+    .p-6 {
+        padding: 16px;
+    }
+
+    form {
+        padding: 16px;
+    }
+
+    .overflow-hidden {
+        height: auto;
+        min-height: 350px;
+    }
+
+    .card h4 {
+        font-size: 15px;
+    }
+
+    .card input,
+    .card select {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flex-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .pagination-dots {
+        gap: 6px;
+    }
+
+    .opciones {
+        flex-direction: column;
+        gap: 6px;
+    }
 }

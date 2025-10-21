@@ -5,13 +5,14 @@ const Sender =()=> {
     const [message, setMessage] = useState('');
 
     const sendWhatsApp = async () => {
-        const res = await fetch('http://localhost:3001/send', {
+        /* const res = await fetch('http://localhost:3001/send', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ to: number, message })
         });
         const data = await res.json();
-        console.log(data);
+        console.log(data); */
+        alert('Esto es solo una prueba')
     };
 
     return (
